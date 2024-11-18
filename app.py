@@ -4,7 +4,26 @@ from flask_restful import Api, Resource
 from flask_session import Session
 # from data_structures import Queue
 from string import Template
+from dotenv import load_dotenv
 import os
+
+# os.environ["KAGGLE_CONFIG_DIR"] = os.path.join(os.getcwd(), "model")
+
+# load_dotenv()
+os.environ["KERAS_BACKEND"] = "jax"
+os.environ["XLA_PYTHON_CLIENT_MEM_FRACTION"] = "1.00"
+
+import keras
+import keras_nlp
+import jax
+import kagglehub
+
+print(keras_nlp.__version__)
+
+# Download latest version
+# path = kagglehub.model_download("bhashwar22/gemma-for-finance/keras/gemma-for-finance")
+
+# print("Path to model files:", path)
 
 # App config
 app = Flask(__name__)

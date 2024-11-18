@@ -5,3 +5,6 @@ flask_session
 instance
 cookies.txt
 data_structures.py
+kaggle.json
+.env
+model
